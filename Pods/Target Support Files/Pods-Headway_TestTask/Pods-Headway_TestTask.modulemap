@@ -1,0 +1,6 @@
+framework module Pods_Headway_TestTask {
+  umbrella header "Pods-Headway_TestTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
