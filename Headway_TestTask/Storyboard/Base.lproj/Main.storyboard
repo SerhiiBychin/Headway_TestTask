@@ -93,6 +93,44 @@
             </objects>
             <point key="canvasLocation" x="223" y="48"/>
         </scene>
+        <!--Repos View Controller-->
+        <scene sceneID="rlV-1E-fcr">
+            <objects>
+                <viewController storyboardIdentifier="ReposViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j0Z-Gg-EN2" customClass="ReposViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyC-Rc-IPw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" placeholder="Search for repositories" translatesAutoresizingMaskIntoConstraints="NO" id="3XF-ay-TbD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LYu-lZ-gm0">
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cXo-to-1xa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3XF-ay-TbD" firstAttribute="top" secondItem="cXo-to-1xa" secondAttribute="top" id="3On-Dk-MQ4"/>
+                            <constraint firstItem="3XF-ay-TbD" firstAttribute="leading" secondItem="cXo-to-1xa" secondAttribute="leading" id="H6A-n6-aKJ"/>
+                            <constraint firstItem="cXo-to-1xa" firstAttribute="trailing" secondItem="LYu-lZ-gm0" secondAttribute="trailing" id="SoL-AI-dLE"/>
+                            <constraint firstItem="LYu-lZ-gm0" firstAttribute="top" secondItem="3XF-ay-TbD" secondAttribute="bottom" id="Wm5-bD-Zt4"/>
+                            <constraint firstItem="cXo-to-1xa" firstAttribute="bottom" secondItem="LYu-lZ-gm0" secondAttribute="bottom" id="esC-2d-cjZ"/>
+                            <constraint firstItem="LYu-lZ-gm0" firstAttribute="leading" secondItem="cXo-to-1xa" secondAttribute="leading" id="fCW-lT-sSD"/>
+                            <constraint firstItem="3XF-ay-TbD" firstAttribute="trailing" secondItem="cXo-to-1xa" secondAttribute="trailing" id="nW3-rX-OjE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="3XF-ay-TbD" id="u1c-el-1Q0"/>
+                        <outlet property="tableView" destination="LYu-lZ-gm0" id="gVr-Dn-rkE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggP-4n-kJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="47"/>
+        </scene>
     </scenes>
     <resources>
         <image name="github-logo" width="256" height="256"/>
