@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VRw-u2-CBu">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="qPI-mx-QqI">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VRw-u2-CBu" customClass="LoginViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZ2-38-N6y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-Zv-wTo" userLabel="ContainerView">
+                                <rect key="frame" x="20" y="10" width="335" height="310"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-logo" translatesAutoresizingMaskIntoConstraints="NO" id="aHy-iR-zrm">
+                                        <rect key="frame" x="105" y="10" width="125" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="5Cr-cG-vgT"/>
+                                            <constraint firstAttribute="height" constant="125" id="LM6-na-5Bn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="C19-wC-Gtm">
+                                        <rect key="frame" x="22.5" y="155" width="290" height="133"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong password or username. Please try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wis-PK-oPG">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username or email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oBD-lG-Fyg">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4vn-Aa-3ii">
+                                                <rect key="frame" x="0.0" y="49" width="290" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fop-VJ-EfA">
+                                                <rect key="frame" x="0.0" y="98" width="290" height="35"/>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="cXh-V1-EGm"/>
+                                                </constraints>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" systemColor="systemGray6Color"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="VRw-u2-CBu" eventType="touchUpInside" id="a18-DQ-T0m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="MVa-1y-h5u"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="aHy-iR-zrm" firstAttribute="centerX" secondItem="ZAO-Zv-wTo" secondAttribute="centerX" id="8mk-IL-JVl"/>
+                                    <constraint firstItem="C19-wC-Gtm" firstAttribute="top" secondItem="aHy-iR-zrm" secondAttribute="bottom" constant="20" id="8ni-AK-uW2"/>
+                                    <constraint firstAttribute="height" constant="310" id="Blv-Bv-PeN"/>
+                                    <constraint firstItem="C19-wC-Gtm" firstAttribute="centerX" secondItem="aHy-iR-zrm" secondAttribute="centerX" id="FE0-Ii-qIW"/>
+                                    <constraint firstItem="aHy-iR-zrm" firstAttribute="top" secondItem="ZAO-Zv-wTo" secondAttribute="top" constant="10" id="LTe-Gd-bhm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yk7-v3-Pia"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZAO-Zv-wTo" firstAttribute="top" secondItem="Yk7-v3-Pia" secondAttribute="top" constant="10" id="DUf-0I-CRL"/>
+                            <constraint firstItem="ZAO-Zv-wTo" firstAttribute="leading" secondItem="Yk7-v3-Pia" secondAttribute="leading" constant="20" id="TSv-eT-wvH"/>
+                            <constraint firstItem="ZAO-Zv-wTo" firstAttribute="centerX" secondItem="Yk7-v3-Pia" secondAttribute="centerX" id="fDy-g4-UF7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Fop-VJ-EfA" id="dly-44-VE4"/>
+                        <outlet property="loginErrorDescriptionLabel" destination="wis-PK-oPG" id="2Ig-sD-gsF"/>
+                        <outlet property="passwordTextField" destination="4vn-Aa-3ii" id="fgH-J7-EwV"/>
+                        <outlet property="usernameTextField" destination="oBD-lG-Fyg" id="560-w2-f8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1PU-um-tQC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="48"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github-logo" width="256" height="256"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
