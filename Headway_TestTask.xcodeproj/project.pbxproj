@@ -10,7 +10,7 @@
 		013CE2A9254161F10073AAFB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2A8254161F10073AAFB /* R.generated.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
-		01CD00C82540AD2E00767AD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* ViewController.swift */; };
+		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
 		01CD00CB2540AD2E00767AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CD00C92540AD2E00767AD9 /* Main.storyboard */; };
 		01CD00CD2540AD3200767AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CD00CC2540AD3200767AD9 /* Assets.xcassets */; };
 		01CD00D02540AD3200767AD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CD00CE2540AD3200767AD9 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01CD00C72540AD2E00767AD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01CD00C72540AD2E00767AD9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01CD00CA2540AD2E00767AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01CD00CC2540AD3200767AD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01CD00CF2540AD3200767AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +52,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		013CE2AC2541EF9D0073AAFB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				01CD00C92540AD2E00767AD9 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		01CD00B72540AD2E00767AD9 = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +81,11 @@
 		01CD00C22540AD2E00767AD9 /* Headway_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				013CE2AC2541EF9D0073AAFB /* Storyboard */,
 				013CE29C254161850073AAFB /* Resource */,
 				01CD00C32540AD2E00767AD9 /* AppDelegate.swift */,
 				01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */,
-				01CD00C72540AD2E00767AD9 /* ViewController.swift */,
-				01CD00C92540AD2E00767AD9 /* Main.storyboard */,
+				01CD00C72540AD2E00767AD9 /* LoginViewController.swift */,
 				01CD00CC2540AD3200767AD9 /* Assets.xcassets */,
 				01CD00CE2540AD3200767AD9 /* LaunchScreen.storyboard */,
 				01CD00D12540AD3200767AD9 /* Info.plist */,
@@ -110,11 +118,11 @@
 			buildConfigurationList = 01CD00D42540AD3200767AD9 /* Build configuration list for PBXNativeTarget "Headway_TestTask" */;
 			buildPhases = (
 				9818167108DF509F0E0829A6 /* [CP] Check Pods Manifest.lock */,
+				013CE29B2541613D0073AAFB /* ShellScript */,
 				01CD00BC2540AD2E00767AD9 /* Sources */,
 				01CD00BD2540AD2E00767AD9 /* Frameworks */,
 				01CD00BE2540AD2E00767AD9 /* Resources */,
 				4DF5C13291C45F2897295F4B /* [CP] Embed Pods Frameworks */,
-				013CE29B2541613D0073AAFB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01CD00C82540AD2E00767AD9 /* ViewController.swift in Sources */,
+				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
 				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,
