@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013CE2A9254161F10073AAFB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2A8254161F10073AAFB /* R.generated.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013CE2A8254161F10073AAFB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013CE29C254161850073AAFB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				013CE2A8254161F10073AAFB /* R.generated.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		01CD00B72540AD2E00767AD9 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 		01CD00C22540AD2E00767AD9 /* Headway_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				013CE29C254161850073AAFB /* Resource */,
 				01CD00C32540AD2E00767AD9 /* AppDelegate.swift */,
 				01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */,
 				01CD00C72540AD2E00767AD9 /* ViewController.swift */,
@@ -80,7 +91,6 @@
 				D2D24C5F837F9CD77E34C917 /* Pods-Headway_TestTask.debug.xcconfig */,
 				ECC99CC1888D3D9888F42B8C /* Pods-Headway_TestTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +114,7 @@
 				01CD00BD2540AD2E00767AD9 /* Frameworks */,
 				01CD00BE2540AD2E00767AD9 /* Resources */,
 				4DF5C13291C45F2897295F4B /* [CP] Embed Pods Frameworks */,
+				013CE29B2541613D0073AAFB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,6 +171,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		013CE29B2541613D0073AAFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${SRCROOT}/${TARGET_NAME}/Resource/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/R.swift/rswift generate ${SRCROOT}/${TARGET_NAME}/Resource/R.generated.swift\n";
+		};
 		4DF5C13291C45F2897295F4B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +239,7 @@
 				01CD00C82540AD2E00767AD9 /* ViewController.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
+				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
