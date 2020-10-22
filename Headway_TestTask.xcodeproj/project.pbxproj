@@ -62,6 +62,31 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		013CE2BE2541FD370073AAFB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				013CE2C22541FD4B0073AAFB /* Repos */,
+				013CE2BF2541FD3F0073AAFB /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		013CE2BF2541FD3F0073AAFB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				01CD00C72540AD2E00767AD9 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		013CE2C22541FD4B0073AAFB /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				013CE2B72541F70A0073AAFB /* ReposViewController.swift */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
 		01CD00B72540AD2E00767AD9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,15 +108,14 @@
 		01CD00C22540AD2E00767AD9 /* Headway_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				013CE2BE2541FD370073AAFB /* Scenes */,
 				013CE2AC2541EF9D0073AAFB /* Storyboard */,
 				013CE29C254161850073AAFB /* Resource */,
 				01CD00C32540AD2E00767AD9 /* AppDelegate.swift */,
 				01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */,
-				01CD00C72540AD2E00767AD9 /* LoginViewController.swift */,
 				01CD00CC2540AD3200767AD9 /* Assets.xcassets */,
 				01CD00CE2540AD3200767AD9 /* LaunchScreen.storyboard */,
 				01CD00D12540AD3200767AD9 /* Info.plist */,
-				013CE2B72541F70A0073AAFB /* ReposViewController.swift */,
 			);
 			path = Headway_TestTask;
 			sourceTree = "<group>";
