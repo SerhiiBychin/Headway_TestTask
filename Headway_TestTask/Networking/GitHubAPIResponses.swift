@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct LoginResponse: Codable {
-    let success: Bool
-}
-
 // MARK: - AuthorizationResponse
 struct AuthorizationResponse: Codable {
     let id: Int?
