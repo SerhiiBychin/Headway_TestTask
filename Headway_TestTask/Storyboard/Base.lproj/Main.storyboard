@@ -54,9 +54,6 @@
                                                 <state key="normal" title="Login">
                                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="loginButtonPressed:" destination="VRw-u2-CBu" eventType="touchUpInside" id="a18-DQ-T0m"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -82,12 +79,6 @@
                             <constraint firstItem="ZAO-Zv-wTo" firstAttribute="centerX" secondItem="Yk7-v3-Pia" secondAttribute="centerX" id="fDy-g4-UF7"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="Fop-VJ-EfA" id="dly-44-VE4"/>
-                        <outlet property="loginErrorDescriptionLabel" destination="wis-PK-oPG" id="2Ig-sD-gsF"/>
-                        <outlet property="passwordTextField" destination="4vn-Aa-3ii" id="fgH-J7-EwV"/>
-                        <outlet property="usernameTextField" destination="oBD-lG-Fyg" id="560-w2-f8e"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PU-um-tQC" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,10 +113,6 @@
                             <constraint firstItem="3XF-ay-TbD" firstAttribute="trailing" secondItem="cXo-to-1xa" secondAttribute="trailing" id="nW3-rX-OjE"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="searchBar" destination="3XF-ay-TbD" id="u1c-el-1Q0"/>
-                        <outlet property="tableView" destination="LYu-lZ-gm0" id="gVr-Dn-rkE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggP-4n-kJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
