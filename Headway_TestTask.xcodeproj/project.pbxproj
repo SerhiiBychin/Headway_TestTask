@@ -10,6 +10,7 @@
 		013CE2A9254161F10073AAFB /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2A8254161F10073AAFB /* R.generated.swift */; };
 		013CE2B82541F70A0073AAFB /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2B72541F70A0073AAFB /* ReposViewController.swift */; };
 		013CE2D82545B48E0073AAFB /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2D72545B48E0073AAFB /* HTTPClient.swift */; };
+		013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2DE2545C4A00073AAFB /* GitHubAPIResponses.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
@@ -23,6 +24,7 @@
 		013CE2A8254161F10073AAFB /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		013CE2B72541F70A0073AAFB /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
 		013CE2D72545B48E0073AAFB /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		013CE2DE2545C4A00073AAFB /* GitHubAPIResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIResponses.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				013CE2D72545B48E0073AAFB /* HTTPClient.swift */,
+				013CE2DE2545C4A00073AAFB /* GitHubAPIResponses.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
+				013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */,
 				013CE2D82545B48E0073AAFB /* HTTPClient.swift in Sources */,
 				013CE2B82541F70A0073AAFB /* ReposViewController.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
