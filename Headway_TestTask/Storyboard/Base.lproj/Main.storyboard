@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="qPI-mx-QqI">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VRw-u2-CBu" customClass="LoginViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="VRw-u2-CBu" customClass="LoginViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vZ2-38-N6y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Repos View Controller-->
         <scene sceneID="rlV-1E-fcr">
             <objects>
-                <viewController storyboardIdentifier="ReposViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j0Z-Gg-EN2" customClass="ReposViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReposViewController" id="j0Z-Gg-EN2" customClass="ReposViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pyC-Rc-IPw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

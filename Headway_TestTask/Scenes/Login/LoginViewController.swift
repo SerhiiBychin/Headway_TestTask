@@ -10,7 +10,7 @@ import UIKit
 final class LoginViewController: DisposeViewController {
     @IBOutlet private (set) var usernameTextField: UITextField!
     @IBOutlet private (set) var passwordTextField: UITextField!
-    @IBOutlet private (set) var loginButton: UIButton!
+    @IBOutlet private (set) var loginButton: UIButton!    
 }
 
 extension LoginViewController: StaticFactory {
