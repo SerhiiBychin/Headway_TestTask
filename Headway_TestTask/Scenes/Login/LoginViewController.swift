@@ -19,6 +19,7 @@ extension LoginViewController: StaticFactory {
             let loginVC = R.storyboard.main.loginViewController()!
             let driver = LoginDriver.Factory.default
             let stateBinder = LoginStateBinder(viewController: loginVC, driver: driver)
+            let actionBinder = LoginActionBinder(viewController: loginVC, driver: driver)
             
             return loginVC
         }
