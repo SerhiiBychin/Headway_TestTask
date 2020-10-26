@@ -20,6 +20,7 @@
 		013CE3002546C05A0073AAFB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2FC2546C05A0073AAFB /* Log.swift */; };
 		013CE3012546C05A0073AAFB /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2FD2546C05A0073AAFB /* Params.swift */; };
 		013CE3022546C05A0073AAFB /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2FE2546C05A0073AAFB /* Level.swift */; };
+		013CE3052546C7A10073AAFB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE3042546C7A10073AAFB /* ActivityIndicator.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
@@ -43,6 +44,7 @@
 		013CE2FC2546C05A0073AAFB /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		013CE2FD2546C05A0073AAFB /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		013CE2FE2546C05A0073AAFB /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		013CE3042546C7A10073AAFB /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		013CE2E72545F4CD0073AAFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				013CE3042546C7A10073AAFB /* ActivityIndicator.swift */,
 				013CE2FA2546C05A0073AAFB /* Log */,
 				013CE2F62546BE510073AAFB /* Closure */,
 				013CE2ED2545F6AC0073AAFB /* DefaultInitializable */,
@@ -368,6 +371,7 @@
 				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,
 				013CE3022546C05A0073AAFB /* Level.swift in Sources */,
 				013CE2E42545C6150073AAFB /* GitHubAPIService.swift in Sources */,
+				013CE3052546C7A10073AAFB /* ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
