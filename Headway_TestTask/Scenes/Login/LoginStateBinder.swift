@@ -32,6 +32,17 @@ final class LoginStateBinder: ViewControllerBinder {
         
         let isEnabled = state != .disabled
         
+        if state == .failure {
+            let actions: [UIAlertController.AlertAction] = [.action(title: "Ok", style: .destructive)]
+            
+            UIAlertController
+                .present(in: viewController, title: "Somthing went wrong😬", message: "Please check your credentials!", style: .alert, actions: actions)
+                .subscribe(onNext: { buttonIndex in
+                    print(buttonIndex)
+                })
+                .disposed(by: bag)
+        }
+        
         viewController.loginButton.isEnabled = isEnabled
         viewController.loginButton.backgroundColor = isEnabled ?
             UIColor.black :
