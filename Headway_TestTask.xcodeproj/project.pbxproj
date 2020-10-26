@@ -13,6 +13,7 @@
 		013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2DE2545C4A00073AAFB /* GitHubAPIResponses.swift */; };
 		013CE2E42545C6150073AAFB /* GitHubAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2E32545C6150073AAFB /* GitHubAPIService.swift */; };
 		013CE2EA2545F50E0073AAFB /* DisposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2E92545F50E0073AAFB /* DisposeViewController.swift */; };
+		013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		013CE2DE2545C4A00073AAFB /* GitHubAPIResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIResponses.swift; sourceTree = "<group>"; };
 		013CE2E32545C6150073AAFB /* GitHubAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIService.swift; sourceTree = "<group>"; };
 		013CE2E92545F50E0073AAFB /* DisposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeViewController.swift; sourceTree = "<group>"; };
+		013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInitializable.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		013CE2E72545F4CD0073AAFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				013CE2ED2545F6AC0073AAFB /* DefaultInitializable */,
 				013CE2E82545F4D70073AAFB /* Binder */,
 			);
 			path = Utils;
@@ -119,6 +122,14 @@
 				013CE2E92545F50E0073AAFB /* DisposeViewController.swift */,
 			);
 			path = Binder;
+			sourceTree = "<group>";
+		};
+		013CE2ED2545F6AC0073AAFB /* DefaultInitializable */ = {
+			isa = PBXGroup;
+			children = (
+				013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */,
+			);
+			path = DefaultInitializable;
 			sourceTree = "<group>";
 		};
 		01CD00B72540AD2E00767AD9 = {
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				013CE2EA2545F50E0073AAFB /* DisposeViewController.swift in Sources */,
+				013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */,
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
 				013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */,

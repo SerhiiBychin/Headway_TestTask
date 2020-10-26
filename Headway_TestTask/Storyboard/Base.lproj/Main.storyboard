@@ -79,6 +79,11 @@
                             <constraint firstItem="ZAO-Zv-wTo" firstAttribute="centerX" secondItem="Yk7-v3-Pia" secondAttribute="centerX" id="fDy-g4-UF7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Fop-VJ-EfA" id="ZMx-2M-2hX"/>
+                        <outlet property="passwordTextField" destination="4vn-Aa-3ii" id="qfW-WH-AaQ"/>
+                        <outlet property="usernameTextField" destination="oBD-lG-Fyg" id="zEa-Te-64d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PU-um-tQC" sceneMemberID="firstResponder"/>
             </objects>
