@@ -10,7 +10,7 @@ import RxCocoa
 
 protocol HTTPClientProvider {
     func get(url: String) -> Observable<Data?>
-    func post(url: String, params: [String: Any], base64Credentials: String) -> Observable<Data?>
+    func post(url: String, params: [String: Any], base64Credentials: String?) -> Observable<Data?>
 }
 
 final class HTTPClient: HTTPClientProvider {
@@ -22,11 +22,15 @@ final class HTTPClient: HTTPClientProvider {
             .catchErrorJustReturn(nil)
     }
     
-    func post(url: String, params: [String: Any], base64Credentials: String) -> Observable<Data?> {
+    func post(url: String, params: [String: Any], base64Credentials: String? = nil) -> Observable<Data?> {
         guard let url = URL(string: url) else { return Observable.empty() }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("Basic \(base64Credentials)", forHTTPHeaderField: "Authorization")
+        
+        if let encodedCreds = base64Credentials {
+            request.setValue("Basic \(encodedCreds)", forHTTPHeaderField: "Authorization")
+        }
+        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let jsonData = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         request.httpBody = jsonData
