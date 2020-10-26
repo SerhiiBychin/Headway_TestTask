@@ -15,6 +15,7 @@
 		013CE2EA2545F50E0073AAFB /* DisposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2E92545F50E0073AAFB /* DisposeViewController.swift */; };
 		013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */; };
 		013CE2F32546BCBD0073AAFB /* ViewControllerBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2F22546BCBD0073AAFB /* ViewControllerBinder.swift */; };
+		013CE2F82546BE9E0073AAFB /* Unown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2F72546BE9E0073AAFB /* Unown.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
@@ -33,6 +34,7 @@
 		013CE2E92545F50E0073AAFB /* DisposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeViewController.swift; sourceTree = "<group>"; };
 		013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInitializable.swift; sourceTree = "<group>"; };
 		013CE2F22546BCBD0073AAFB /* ViewControllerBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBinder.swift; sourceTree = "<group>"; };
+		013CE2F72546BE9E0073AAFB /* Unown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unown.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		013CE2E72545F4CD0073AAFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				013CE2F62546BE510073AAFB /* Closure */,
 				013CE2ED2545F6AC0073AAFB /* DefaultInitializable */,
 				013CE2E82545F4D70073AAFB /* Binder */,
 			);
@@ -133,6 +136,14 @@
 				013CE2EE2545F6CA0073AAFB /* DefaultInitializable.swift */,
 			);
 			path = DefaultInitializable;
+			sourceTree = "<group>";
+		};
+		013CE2F62546BE510073AAFB /* Closure */ = {
+			isa = PBXGroup;
+			children = (
+				013CE2F72546BE9E0073AAFB /* Unown.swift */,
+			);
+			path = Closure;
 			sourceTree = "<group>";
 		};
 		01CD00B72540AD2E00767AD9 = {
@@ -330,6 +341,7 @@
 				013CE2D82545B48E0073AAFB /* HTTPClient.swift in Sources */,
 				013CE2B82541F70A0073AAFB /* ReposViewController.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
+				013CE2F82546BE9E0073AAFB /* Unown.swift in Sources */,
 				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,
 				013CE2E42545C6150073AAFB /* GitHubAPIService.swift in Sources */,
 			);
