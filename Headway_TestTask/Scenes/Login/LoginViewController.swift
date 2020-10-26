@@ -17,6 +17,8 @@ extension LoginViewController: StaticFactory {
     enum Factory {
         static var `default`: LoginViewController {
             let loginVC = R.storyboard.main.loginViewController()!
+            let driver = LoginDriver.Factory.default
+            
             return loginVC
         }
     }
