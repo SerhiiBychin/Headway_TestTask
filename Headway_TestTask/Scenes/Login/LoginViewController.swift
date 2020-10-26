@@ -21,6 +21,7 @@ extension LoginViewController: StaticFactory {
             let stateBinder = LoginStateBinder(viewController: loginVC, driver: driver)
             let actionBinder = LoginActionBinder(viewController: loginVC, driver: driver)
             
+            loginVC.bag.insert(stateBinder, actionBinder)
             return loginVC
         }
     }

@@ -34,7 +34,7 @@ final class LoginStateBinder: ViewControllerBinder {
         
         viewController.loginButton.isEnabled = isEnabled
         viewController.loginButton.backgroundColor = isEnabled ?
-            UIColor(red: 255/255, green: 185/255, blue: 45/255, alpha: 1.0) :
+            UIColor.black :
             UIColor.lightGray
     }
 }
