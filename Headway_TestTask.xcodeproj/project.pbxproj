@@ -22,6 +22,17 @@
 		013CE3022546C05A0073AAFB /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE2FE2546C05A0073AAFB /* Level.swift */; };
 		013CE3052546C7A10073AAFB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE3042546C7A10073AAFB /* ActivityIndicator.swift */; };
 		013CE31225473CA60073AAFB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE31125473CA60073AAFB /* AppCoordinator.swift */; };
+		013CE334254757E00073AAFB /* LoginDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE333254757E00073AAFB /* LoginDriver.swift */; };
+		013CE34C25475A8D0073AAFB /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34225475A8D0073AAFB /* Next.swift */; };
+		013CE34D25475A8D0073AAFB /* Publicsher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34325475A8D0073AAFB /* Publicsher.swift */; };
+		013CE34E25475A8D0073AAFB /* Callable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34425475A8D0073AAFB /* Callable.swift */; };
+		013CE34F25475A8D0073AAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34525475A8D0073AAFB /* Util.swift */; };
+		013CE35025475A8D0073AAFB /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34625475A8D0073AAFB /* Driver.swift */; };
+		013CE35125475A8D0073AAFB /* Latest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34725475A8D0073AAFB /* Latest.swift */; };
+		013CE35225475A8D0073AAFB /* NSObject+Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34825475A8D0073AAFB /* NSObject+Disposable.swift */; };
+		013CE35325475A8D0073AAFB /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34925475A8D0073AAFB /* Loading.swift */; };
+		013CE35425475A8D0073AAFB /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34A25475A8D0073AAFB /* Bool.swift */; };
+		013CE35525475A8D0073AAFB /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34B25475A8D0073AAFB /* Just.swift */; };
 		01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C32540AD2E00767AD9 /* AppDelegate.swift */; };
 		01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */; };
 		01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD00C72540AD2E00767AD9 /* LoginViewController.swift */; };
@@ -47,6 +58,17 @@
 		013CE2FE2546C05A0073AAFB /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		013CE3042546C7A10073AAFB /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		013CE31125473CA60073AAFB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		013CE333254757E00073AAFB /* LoginDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDriver.swift; sourceTree = "<group>"; };
+		013CE34225475A8D0073AAFB /* Next.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
+		013CE34325475A8D0073AAFB /* Publicsher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publicsher.swift; sourceTree = "<group>"; };
+		013CE34425475A8D0073AAFB /* Callable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callable.swift; sourceTree = "<group>"; };
+		013CE34525475A8D0073AAFB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		013CE34625475A8D0073AAFB /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		013CE34725475A8D0073AAFB /* Latest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Latest.swift; sourceTree = "<group>"; };
+		013CE34825475A8D0073AAFB /* NSObject+Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Disposable.swift"; sourceTree = "<group>"; };
+		013CE34925475A8D0073AAFB /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		013CE34A25475A8D0073AAFB /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		013CE34B25475A8D0073AAFB /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		01CD00C02540AD2E00767AD9 /* Headway_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD00C32540AD2E00767AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CD00C52540AD2E00767AD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +122,7 @@
 		013CE2BF2541FD3F0073AAFB /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				013CE333254757E00073AAFB /* LoginDriver.swift */,
 				01CD00C72540AD2E00767AD9 /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -126,6 +149,7 @@
 		013CE2E72545F4CD0073AAFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				013CE34125475A8D0073AAFB /* RxUtils */,
 				013CE3042546C7A10073AAFB /* ActivityIndicator.swift */,
 				013CE2FA2546C05A0073AAFB /* Log */,
 				013CE2F62546BE510073AAFB /* Closure */,
@@ -169,6 +193,23 @@
 				013CE2FE2546C05A0073AAFB /* Level.swift */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		013CE34125475A8D0073AAFB /* RxUtils */ = {
+			isa = PBXGroup;
+			children = (
+				013CE34225475A8D0073AAFB /* Next.swift */,
+				013CE34325475A8D0073AAFB /* Publicsher.swift */,
+				013CE34425475A8D0073AAFB /* Callable.swift */,
+				013CE34525475A8D0073AAFB /* Util.swift */,
+				013CE34625475A8D0073AAFB /* Driver.swift */,
+				013CE34725475A8D0073AAFB /* Latest.swift */,
+				013CE34825475A8D0073AAFB /* NSObject+Disposable.swift */,
+				013CE34925475A8D0073AAFB /* Loading.swift */,
+				013CE34A25475A8D0073AAFB /* Bool.swift */,
+				013CE34B25475A8D0073AAFB /* Just.swift */,
+			);
+			path = RxUtils;
 			sourceTree = "<group>";
 		};
 		01CD00B72540AD2E00767AD9 = {
@@ -361,15 +402,26 @@
 				013CE2EA2545F50E0073AAFB /* DisposeViewController.swift in Sources */,
 				013CE2FF2546C05A0073AAFB /* Logging.swift in Sources */,
 				013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */,
+				013CE35025475A8D0073AAFB /* Driver.swift in Sources */,
+				013CE34E25475A8D0073AAFB /* Callable.swift in Sources */,
 				013CE3012546C05A0073AAFB /* Params.swift in Sources */,
 				013CE2F32546BCBD0073AAFB /* ViewControllerBinder.swift in Sources */,
+				013CE334254757E00073AAFB /* LoginDriver.swift in Sources */,
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
+				013CE35225475A8D0073AAFB /* NSObject+Disposable.swift in Sources */,
+				013CE35325475A8D0073AAFB /* Loading.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
+				013CE34C25475A8D0073AAFB /* Next.swift in Sources */,
+				013CE35425475A8D0073AAFB /* Bool.swift in Sources */,
 				013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */,
+				013CE35525475A8D0073AAFB /* Just.swift in Sources */,
 				013CE2D82545B48E0073AAFB /* HTTPClient.swift in Sources */,
 				013CE31225473CA60073AAFB /* AppCoordinator.swift in Sources */,
 				013CE3002546C05A0073AAFB /* Log.swift in Sources */,
+				013CE34F25475A8D0073AAFB /* Util.swift in Sources */,
+				013CE34D25475A8D0073AAFB /* Publicsher.swift in Sources */,
 				013CE2B82541F70A0073AAFB /* ReposViewController.swift in Sources */,
+				013CE35125475A8D0073AAFB /* Latest.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
 				013CE2F82546BE9E0073AAFB /* Unown.swift in Sources */,
 				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,

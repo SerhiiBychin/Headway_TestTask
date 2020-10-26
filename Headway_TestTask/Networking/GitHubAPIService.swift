@@ -42,3 +42,9 @@ final class GitHubAPIService: GitHubAPIProvider {
             }
     }
 }
+
+extension GitHubAPIService: StaticFactory {
+    enum Factory {
+        static let `default`: GitHubAPIProvider = GitHubAPIService()
+    }
+}
