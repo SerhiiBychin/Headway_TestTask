@@ -44,6 +44,7 @@
 		01E25BF7254770D5006816BD /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E25BF4254770D5006816BD /* Closure.swift */; };
 		01E25BF8254770D5006816BD /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E25BF5254770D5006816BD /* Set.swift */; };
 		01E25BF9254770D5006816BD /* RawClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E25BF6254770D5006816BD /* RawClosure.swift */; };
+		01E25BFD2547782E006816BD /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E25BFC2547782E006816BD /* UIAlertControllerExtension.swift */; };
 		588A466D58BFB502DE411D24 /* Pods_Headway_TestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792B14C9286822C082A86D18 /* Pods_Headway_TestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		01E25BF4254770D5006816BD /* Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
 		01E25BF5254770D5006816BD /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		01E25BF6254770D5006816BD /* RawClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawClosure.swift; sourceTree = "<group>"; };
+		01E25BFC2547782E006816BD /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		792B14C9286822C082A86D18 /* Pods_Headway_TestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Headway_TestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D24C5F837F9CD77E34C917 /* Pods-Headway_TestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headway_TestTask.debug.xcconfig"; path = "Target Support Files/Pods-Headway_TestTask/Pods-Headway_TestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		ECC99CC1888D3D9888F42B8C /* Pods-Headway_TestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Headway_TestTask.release.xcconfig"; path = "Target Support Files/Pods-Headway_TestTask/Pods-Headway_TestTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		01CD00C22540AD2E00767AD9 /* Headway_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				01E25BFB2547780D006816BD /* Extensions */,
 				013CE2BE2541FD370073AAFB /* Scenes */,
 				013CE2AC2541EF9D0073AAFB /* Storyboard */,
 				013CE2D62545B4440073AAFB /* Networking */,
@@ -261,6 +264,14 @@
 				013CE31125473CA60073AAFB /* AppCoordinator.swift */,
 			);
 			path = Headway_TestTask;
+			sourceTree = "<group>";
+		};
+		01E25BFB2547780D006816BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01E25BFC2547782E006816BD /* UIAlertControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0B51CFA31258DC4132419D4F /* Pods */ = {
@@ -433,6 +444,7 @@
 				013CE35B25476F9F0073AAFB /* LoginActionBinder.swift in Sources */,
 				013CE2DF2545C4A00073AAFB /* GitHubAPIResponses.swift in Sources */,
 				013CE35525475A8D0073AAFB /* Just.swift in Sources */,
+				01E25BFD2547782E006816BD /* UIAlertControllerExtension.swift in Sources */,
 				013CE2D82545B48E0073AAFB /* HTTPClient.swift in Sources */,
 				013CE31225473CA60073AAFB /* AppCoordinator.swift in Sources */,
 				01E25BF8254770D5006816BD /* Set.swift in Sources */,
