@@ -41,6 +41,10 @@ final class LoginStateBinder: ViewControllerBinder {
                     print(buttonIndex)
                 })
                 .disposed(by: bag)
+        } else if state == .success {
+            let reposVC = R.storyboard.main.reposViewController()!
+            reposVC.modalPresentationStyle = .fullScreen
+            viewController.present(reposVC, animated: true, completion: nil)
         }
         
         viewController.loginButton.isEnabled = isEnabled
