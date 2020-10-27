@@ -40,6 +40,9 @@ final class GitHubAPIService: GitHubAPIProvider {
                 print(response.token ?? "")
                 return true
             }
+            .catchError { (error) in
+                throw error
+            }
     }
 }
 

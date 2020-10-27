@@ -27,29 +27,35 @@ final class LoginStateBinder: ViewControllerBinder {
     }
     
     private func applyState(_ state: LoginViewState) {
-        let isLoading = state == .loading
-        UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
-        
-        let isEnabled = state != .disabled
-        
-        if state == .failure {
+        switch state {
+        case .success:
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            let reposVC = R.storyboard.main.reposViewController()!
+            reposVC.modalPresentationStyle = .fullScreen
+            viewController.present(reposVC, animated: true, completion: nil)
+            
+        case .failure(let error):
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             let actions: [UIAlertController.AlertAction] = [.action(title: "Ok", style: .destructive)]
+            let errorMessage = error?.localizedDescription != "The Internet connection appears to be offline." ? "Bad credentials." : "No Internet connection."
             
             UIAlertController
-                .present(in: viewController, title: "Somthing went wrong😬", message: "Please check your credentials!", style: .alert, actions: actions)
+                .present(in: viewController, title: "Somthing went wrong😬", message: errorMessage, style: .alert, actions: actions)
                 .subscribe(onNext: { buttonIndex in
                     print(buttonIndex)
                 })
                 .disposed(by: bag)
-        } else if state == .success {
-            let reposVC = R.storyboard.main.reposViewController()!
-            reposVC.modalPresentationStyle = .fullScreen
-            viewController.present(reposVC, animated: true, completion: nil)
+            
+        case .loading:
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            
+        case .disabled:
+            viewController.loginButton.isEnabled = false
+            viewController.loginButton.backgroundColor = .lightGray
+            
+        case .enabled:
+            viewController.loginButton.isEnabled = true
+            viewController.loginButton.backgroundColor = .black
         }
-        
-        viewController.loginButton.isEnabled = isEnabled
-        viewController.loginButton.backgroundColor = isEnabled ?
-            UIColor.black :
-            UIColor.lightGray
     }
 }

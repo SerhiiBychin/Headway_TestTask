@@ -11,7 +11,7 @@ import RxCocoa
 
 enum LoginViewState {
     case success
-    case failure
+    case failure(Error?)
     case loading
     case disabled
     case enabled
@@ -48,8 +48,8 @@ final class LoginDriver: LoginDriving {
     func login() {
         api.login(withUsername: userName, password: password)
             .trackActivity(activityIndicator)
-            .map({ $0 ? .success : .failure })
-            .bind(onNext: stateRelay.accept)
+            .map({ $0 ? .success : .failure(nil) })
+            .subscribe(onNext: stateRelay.accept, onError: { self.stateRelay.accept(.failure($0))})
             .disposed(by: bag)
     }
     

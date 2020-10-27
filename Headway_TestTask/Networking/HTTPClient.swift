@@ -36,6 +36,8 @@ final class HTTPClient: HTTPClientProvider {
         request.httpBody = jsonData
         return URLSession.shared.rx.data(request: request)
             .map { Optional.init($0) }
-            .catchErrorJustReturn(nil)
+            .catchError { (error) -> Observable<Data?> in
+                throw error
+            }
     }
 }
