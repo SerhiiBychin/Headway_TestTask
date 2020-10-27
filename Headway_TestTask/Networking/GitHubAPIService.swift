@@ -18,9 +18,11 @@ protocol GitHubAPIProvider: GitHubAPIAuthProvider { }
 
 final class GitHubAPIService: GitHubAPIProvider {
     private let httpClient: HTTPClientProvider
+    private let storage: StorageSavable
     
-    init(httpClient: HTTPClientProvider = HTTPClient()) {
+    init(httpClient: HTTPClientProvider = HTTPClient(), storage: StorageSavable = Storage()) {
         self.httpClient = httpClient
+        self.storage = storage
     }
     
     
@@ -37,7 +39,7 @@ final class GitHubAPIService: GitHubAPIProvider {
                       let response = try? JSONDecoder().decode(AuthorizationResponse.self, from: data) else {
                     return false
                 }
-                print(response.token ?? "")
+                self.storage.saveToken(response.token ?? "")
                 return true
             }
             .catchError { (error) in
