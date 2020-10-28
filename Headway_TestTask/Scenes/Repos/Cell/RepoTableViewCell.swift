@@ -26,3 +26,11 @@ class RepoTableViewCell: UITableViewCell {
         repoNameLabel.text = name
     }
 }
+
+extension RepoTableViewCell {
+    func configure(withRepoItem item: RepoItem) {
+        configure(withImageUrl: item.imageUrl,
+                  name: item.name)
+    }
+}
+
