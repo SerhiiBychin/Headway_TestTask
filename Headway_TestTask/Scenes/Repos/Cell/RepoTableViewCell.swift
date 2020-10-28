@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class RepoTableViewCell: UITableViewCell {
     @IBOutlet private (set) var repoNameLabel: UILabel!
