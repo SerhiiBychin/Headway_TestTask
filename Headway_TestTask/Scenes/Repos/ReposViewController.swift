@@ -18,6 +18,7 @@ extension ReposViewController: StaticFactory {
         static var `default`: ReposViewController {
             let reposVC = R.storyboard.main.reposViewController()!
             let driver = ReposDriver.Factory.default
+            let actionBinder = ReposActionBinder(viewController: reposVC, driver: driver)
             
             return reposVC
         }
