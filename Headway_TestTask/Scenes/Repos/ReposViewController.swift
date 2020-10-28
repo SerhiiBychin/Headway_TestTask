@@ -17,6 +17,7 @@ extension ReposViewController: StaticFactory {
     enum Factory {
         static var `default`: ReposViewController {
             let reposVC = R.storyboard.main.reposViewController()!
+            let driver = ReposDriver.Factory.default
             
             return reposVC
         }
