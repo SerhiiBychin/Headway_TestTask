@@ -72,7 +72,7 @@ final class GitHubAPIService: GitHubAPIProvider {
         return httpClient.get(url: "https://api.github.com/search/repositories?", token: storage.getToken() ?? "", params: ["q": query])
             .map { (data) -> Repos? in
                 guard let data = data,
-                      let response = try? JSONDecoder().decode(ReposResult.self, from: data) else {
+                      let response = try? JSONDecoder().decode(ReposSearchResult.self, from: data) else {
                     return nil
                 }
                 return response.items
