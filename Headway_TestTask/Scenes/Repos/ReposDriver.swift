@@ -66,7 +66,9 @@ final class ReposDriver: ReposDriving {
         let isValid = query.count >= 3
         
         guard isValid else {
-            stateRelay.accept(.searchResults([RepoItemViewModel]()))
+            if let userRepos = results?.compactMap({ RepoItemViewModel(repo: $0) }) {
+                stateRelay.accept(.results(userRepos))                
+            }
             return
         }
         
