@@ -39,8 +39,13 @@ final class ReposStateBinder: ViewControllerBinder {
         switch state {
         case .loading, .none:
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            
         case let .results(repos):
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            viewController.setDataSource(repos)
+            viewController.tableView.reloadData()
+            
+        case let .searchResults(repos):
             viewController.setDataSource(repos)
             viewController.tableView.reloadData()
         }
