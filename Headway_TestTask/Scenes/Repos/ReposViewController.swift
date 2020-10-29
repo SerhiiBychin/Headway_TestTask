@@ -10,9 +10,9 @@ import RxSwift
 import SafariServices
 
 final class ReposViewController: DisposeViewController {
-    private var dataSource: [RepoItem]?
-    private let selectedIndexSubject = PublishSubject<RepoItem>()
-    var selectedIndex: Observable<RepoItem> {
+    private var dataSource: [RepoItemViewModel]?
+    private let selectedIndexSubject = PublishSubject<RepoItemViewModel>()
+    var selectedIndex: Observable<RepoItemViewModel> {
         return selectedIndexSubject.asObservable()
     }
     
@@ -28,7 +28,7 @@ extension ReposViewController: StaticFactory {
             let driver = ReposDriver.Factory.default
             let actionBinder = ReposActionBinder(viewController: reposVC, driver: driver)
             let stateBinder = ReposStateBinder.Factory.default(reposVC, driver: driver)
-            let navigationBinder = NavigationPushBinder<RepoItem, ReposViewController>.Factory
+            let navigationBinder = NavigationPushBinder<RepoItemViewModel, ReposViewController>.Factory
                 .present(viewController: reposVC,
                       driver: driver.didSelect,
                       factory: repoDetailsSafariVC)
@@ -43,14 +43,14 @@ extension ReposViewController: StaticFactory {
             return reposVC
         }
         
-        private static func repoDetailsSafariVC(_ item: RepoItem) -> UIViewController {
+        private static func repoDetailsSafariVC(_ item: RepoItemViewModel) -> UIViewController {
             return SFSafariViewController(url: URL(string: item.repoURL)!)
         }
     }
 }
 
 extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
-    func setDataSource(_ dataSource: [RepoItem]) {
+    func setDataSource(_ dataSource: [RepoItemViewModel]) {
         self.dataSource = dataSource
     }
     

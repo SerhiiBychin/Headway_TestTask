@@ -28,7 +28,7 @@ class RepoTableViewCell: UITableViewCell {
 }
 
 extension RepoTableViewCell {
-    func configure(withRepoItem item: RepoItem) {
+    func configure(withRepoItem item: RepoItemViewModel) {
         configure(withImageUrl: item.imageUrl,
                   name: item.name)
     }

@@ -24,11 +24,16 @@ final class ReposActionBinder: ViewControllerBinder {
     func bindLoaded() {
         let select = viewController
             .selectedIndex
-            .asDriver(onError: RepoItem(id: 0, repoURL: "", name: "", imageUrl: ""))
+            .asDriver(onError: RepoItemViewModel(id: 0, repoURL: "", name: "", imageUrl: ""))
+        
+        let query = viewController.searchBar.rx.text.orEmpty
         
         viewController.bag.insert(
             select
-                .drive(onNext: driver.select)
+                .drive(onNext: driver.select),
+            
+            query
+                .bind(onNext: driver.search)
         )
     }
 }

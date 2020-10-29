@@ -18,6 +18,7 @@ final class HTTPClient: HTTPClientProvider {
         guard let url = URL(string: url) else { return Observable.empty() }
         var request = URLRequest(url: url)
         request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        
         return URLSession.shared.rx.data(request: request)
             .map { Optional.init($0) }
             .catchErrorJustReturn(nil)

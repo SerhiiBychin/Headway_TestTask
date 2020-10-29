@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct RepoItem {
+struct RepoItemViewModel {
     let id: Int
     let repoURL: String
     let name: String
     let imageUrl: String?
 }
 
-extension RepoItem {
+extension RepoItemViewModel {
     init(repo: Repo) {
         self.id = repo.id
         self.repoURL = repo.htmlURL ?? ""

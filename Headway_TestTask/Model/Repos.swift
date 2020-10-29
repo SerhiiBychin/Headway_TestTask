@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - SearchResult
-struct ReposResult: Codable {
+struct ReposSearchResult: Codable {
     let totalCount: Int?
     let incompleteResults: Bool?
     let items: [Repo]?
