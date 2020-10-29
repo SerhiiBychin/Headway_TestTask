@@ -146,6 +146,34 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `RepoTableViewCell`.
+    static let repoTableViewCell = _R.nib._RepoTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "RepoTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.repoTableViewCell) instead")
+    static func repoTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.repoTableViewCell)
+    }
+    #endif
+
+    static func repoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RepoTableViewCell? {
+      return R.nib.repoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RepoTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `repoTableViewCell`.
+    static let repoTableViewCell: Rswift.ReuseIdentifier<RepoTableViewCell> = Rswift.ReuseIdentifier(identifier: "repoTableViewCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -162,9 +190,42 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _RepoTableViewCell.validate()
+    }
+
+    struct _RepoTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = RepoTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "repoTableViewCell"
+      let name = "RepoTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> RepoTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? RepoTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "repo-icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'repo-icon' is used in nib 'RepoTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

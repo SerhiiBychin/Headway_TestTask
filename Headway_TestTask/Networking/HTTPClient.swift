@@ -9,14 +9,15 @@ import RxSwift
 import RxCocoa
 
 protocol HTTPClientProvider {
-    func get(url: String) -> Observable<Data?>
+    func get(url: String, token: String) -> Observable<Data?>
     func post(url: String, params: [String: Any], base64Credentials: String?) -> Observable<Data?>
 }
 
 final class HTTPClient: HTTPClientProvider {
-    func get(url: String) -> Observable<Data?> {
+    func get(url: String, token: String) -> Observable<Data?> {
         guard let url = URL(string: url) else { return Observable.empty() }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
         return URLSession.shared.rx.data(request: request)
             .map { Optional.init($0) }
             .catchErrorJustReturn(nil)

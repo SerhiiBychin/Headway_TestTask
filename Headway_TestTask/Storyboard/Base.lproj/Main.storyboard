@@ -123,6 +123,10 @@
                             <constraint firstItem="3XF-ay-TbD" firstAttribute="trailing" secondItem="cXo-to-1xa" secondAttribute="trailing" id="nW3-rX-OjE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="3XF-ay-TbD" id="e42-Uk-tAm"/>
+                        <outlet property="tableView" destination="LYu-lZ-gm0" id="WIj-3L-v9E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggP-4n-kJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

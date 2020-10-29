@@ -11,5 +11,6 @@ target 'Headway_TestTask' do
   pod 'RxViewController'
   pod 'RxDataSources'
   pod 'R.swift'
+  pod 'Nuke', '~> 7.0'
 
 end

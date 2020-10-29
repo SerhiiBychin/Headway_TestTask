@@ -13,14 +13,20 @@ protocol GitHubAPIAuthProvider {
     func login(withUsername username: String, password: String) -> Observable<Bool>
 }
 
-protocol GitHubAPIProvider: GitHubAPIAuthProvider { }
+protocol GitHubAPIReposProvider {
+    func fetchRepos() -> Observable<Repos?>
+}
+
+protocol GitHubAPIProvider: GitHubAPIAuthProvider, GitHubAPIReposProvider { }
 
 
 final class GitHubAPIService: GitHubAPIProvider {
     private let httpClient: HTTPClientProvider
+    private let storage: StorageSavable
     
-    init(httpClient: HTTPClientProvider = HTTPClient()) {
+    init(httpClient: HTTPClientProvider = HTTPClient(), storage: StorageSavable = Storage()) {
         self.httpClient = httpClient
+        self.storage = storage
     }
     
     
@@ -37,11 +43,27 @@ final class GitHubAPIService: GitHubAPIProvider {
                       let response = try? JSONDecoder().decode(AuthorizationResponse.self, from: data) else {
                     return false
                 }
-                print(response.token ?? "")
+                self.storage.saveToken(response.token ?? "")
                 return true
             }
             .catchError { (error) in
                 throw error
+            }
+    }
+    
+    func fetchRepos() -> Observable<Repos?> {
+        return httpClient.get(url: "https://api.github.com/user/repos", token: storage.getToken() ?? "")
+            .map { (data) -> Repos? in
+                guard let data = data,
+                      let response = try? JSONDecoder().decode(Repos.self, from: data) else {
+                    return nil
+                }
+                return response
+            }
+            .map { (repos) -> Repos? in
+                return repos?.sorted(by: { (repo1, repo2) -> Bool in
+                    return repo1.stargazersCount < repo2.stargazersCount
+                })
             }
     }
 }
