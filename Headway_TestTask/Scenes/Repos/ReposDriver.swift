@@ -12,31 +12,31 @@ import RxSwiftExt
 enum ReposState {
     case none
     case loading
-    case results([RepoItem])
+    case results([RepoItemViewModel])
 }
 
 protocol ReposDriving {
     var state: Driver<ReposState> { get }
-    var didSelect: Driver<RepoItem> { get }
+    var didSelect: Driver<RepoItemViewModel> { get }
     
     
-    func select(_ model: RepoItem)
+    func select(_ model: RepoItemViewModel)
 }
 
 final class ReposDriver: ReposDriving {
     private var repoBag = DisposeBag()
     private let stateRelay = BehaviorRelay<ReposState>(value: .none)
-    private let didSelectRelay = BehaviorRelay<RepoItem?>(value: nil)
+    private let didSelectRelay = BehaviorRelay<RepoItemViewModel?>(value: nil)
     private var results: Repos? {
         didSet {
-            if let repoItems = results?.compactMap({ RepoItem(repo: $0) }) {
+            if let repoItems = results?.compactMap({ RepoItemViewModel(repo: $0) }) {
                 stateRelay.accept(.results(repoItems))
             }
         }
     }
     
     var state: Driver<ReposState> { stateRelay.asDriver() }
-    var didSelect: Driver<RepoItem> { didSelectRelay.unwrap().asDriver() }
+    var didSelect: Driver<RepoItemViewModel> { didSelectRelay.unwrap().asDriver() }
     
     private let api: GitHubAPIProvider
     
@@ -46,7 +46,7 @@ final class ReposDriver: ReposDriving {
     }
     
     
-    func select(_ model: RepoItem) {
+    func select(_ model: RepoItemViewModel) {
         didSelectRelay.accept(model)
     }
     

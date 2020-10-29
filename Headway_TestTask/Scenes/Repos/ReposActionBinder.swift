@@ -24,7 +24,7 @@ final class ReposActionBinder: ViewControllerBinder {
     func bindLoaded() {
         let select = viewController
             .selectedIndex
-            .asDriver(onError: RepoItem(id: 0, repoURL: "", name: "", imageUrl: ""))
+            .asDriver(onError: RepoItemViewModel(id: 0, repoURL: "", name: "", imageUrl: ""))
         
         viewController.bag.insert(
             select
