@@ -9,51 +9,51 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 
+enum ReposState {
+    case none
+    case loading
+    case results([RepoItem])
+}
+
 protocol ReposDriving {
-    var isLoading: Driver<Bool> { get }
-    var results: Driver<[RepoItem]> { get }
+    var state: Driver<ReposState> { get }
     var didSelect: Driver<RepoItem> { get }
     
-    func provideUserRepos()
+    
     func select(_ model: RepoItem)
 }
 
 final class ReposDriver: ReposDriving {
-    private let activityIndicator = ActivityIndicator()
-    
-    private let resultsRelay = BehaviorRelay<[RepoItem]?>(value: nil)
-    private let didSelectRelay = BehaviorRelay<RepoItem?>(value: nil)
-    
     private var repoBag = DisposeBag()
+    private let stateRelay = BehaviorRelay<ReposState>(value: .none)
+    private let didSelectRelay = BehaviorRelay<RepoItem?>(value: nil)
+    private var results: Repos? {
+        didSet {
+            if let repoItems = results?.compactMap({ RepoItem(repo: $0) }) {
+                stateRelay.accept(.results(repoItems))
+            }
+        }
+    }
+    
+    var state: Driver<ReposState> { stateRelay.asDriver() }
+    var didSelect: Driver<RepoItem> { didSelectRelay.unwrap().asDriver() }
     
     private let api: GitHubAPIProvider
     
-    var isLoading: Driver<Bool> { activityIndicator.asDriver() }
-    var results: Driver<[RepoItem]> { resultsRelay.unwrap().asDriver() }
-    var didSelect: Driver<RepoItem> { didSelectRelay.unwrap().asDriver() }
-    
     init(api: GitHubAPIProvider) {
         self.api = api
-    }
-    
-    func provideUserRepos() {
-        repoBag = DisposeBag()
-        
-        let userRepos: Observable<[RepoItem]>
-        
-        userRepos = api.fetchRepos()
-            .map({ $0 ?? [] })
-            .mapMany(RepoItem.init)
-        
-        userRepos
-            .trackActivity(activityIndicator)
-            .bind(onNext: resultsRelay.accept)
-            .disposed(by: repoBag)
+        bind()
     }
     
     
     func select(_ model: RepoItem) {
         didSelectRelay.accept(model)
+    }
+    
+    private func bind() {
+        api.fetchRepos()
+            .bind(onNext: set(unowned: self, to: \.results))
+            .disposed(by: repoBag)
     }
 }
 

@@ -22,17 +22,13 @@ final class ReposActionBinder: ViewControllerBinder {
     func dispose() { }
     
     func bindLoaded() {
-        let viewDidLoad = viewController.rx.viewDidLoad
-        //        let query = viewController.searchBar.rx.text.orEmpty
-        let didSelectItem = viewController.tableView.rx.modelSelected(RepoItem.self)
-                
+        let select = viewController
+            .selectedIndex
+            .asDriver(onError: RepoItem(id: 0, repoURL: "", name: "", imageUrl: ""))
+        
         viewController.bag.insert(
-            viewDidLoad
-                .bind(onNext: driver.provideUserRepos),
-//            query
-//                .bind(onNext: driver.search),
-            didSelectItem
-                .bind(onNext: driver.select)
+            select
+                .drive(onNext: driver.select)
         )
     }
 }

@@ -38,6 +38,9 @@
 		0191F597254A0677005CCF58 /* RepoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F596254A0677005CCF58 /* RepoItemViewModel.swift */; };
 		0191F5A6254A0B29005CCF58 /* ReposDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5A5254A0B29005CCF58 /* ReposDriver.swift */; };
 		0191F5B7254A157E005CCF58 /* ReposActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */; };
+		0191F5BB254A181F005CCF58 /* ReposStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5BA254A181F005CCF58 /* ReposStateBinder.swift */; };
+		0191F5BF254A45D6005CCF58 /* NavigationBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5BE254A45D6005CCF58 /* NavigationBinder.swift */; };
+		0191F5C2254A46A2005CCF58 /* Transitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5C1254A46A2005CCF58 /* Transitioning.swift */; };
 		01A55D892548BED90048803F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A55D882548BED90048803F /* Storage.swift */; };
 		01A55D8D2548C4770048803F /* Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A55D8C2548C4770048803F /* Repos.swift */; };
 		01A55D922549FFC90048803F /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A55D902549FFC90048803F /* RepoTableViewCell.xib */; };
@@ -87,6 +90,9 @@
 		0191F596254A0677005CCF58 /* RepoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemViewModel.swift; sourceTree = "<group>"; };
 		0191F5A5254A0B29005CCF58 /* ReposDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDriver.swift; sourceTree = "<group>"; };
 		0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposActionBinder.swift; sourceTree = "<group>"; };
+		0191F5BA254A181F005CCF58 /* ReposStateBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposStateBinder.swift; sourceTree = "<group>"; };
+		0191F5BE254A45D6005CCF58 /* NavigationBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBinder.swift; sourceTree = "<group>"; };
+		0191F5C1254A46A2005CCF58 /* Transitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transitioning.swift; sourceTree = "<group>"; };
 		01A55D882548BED90048803F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		01A55D8C2548C4770048803F /* Repos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repos.swift; sourceTree = "<group>"; };
 		01A55D902549FFC90048803F /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				0191F596254A0677005CCF58 /* RepoItemViewModel.swift */,
 				0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */,
 				0191F5A5254A0B29005CCF58 /* ReposDriver.swift */,
+				0191F5BA254A181F005CCF58 /* ReposStateBinder.swift */,
 				01A55D8F2549FFA80048803F /* Cell */,
 			);
 			path = Repos;
@@ -195,6 +202,8 @@
 		013CE2E82545F4D70073AAFB /* Binder */ = {
 			isa = PBXGroup;
 			children = (
+				0191F5C1254A46A2005CCF58 /* Transitioning.swift */,
+				0191F5BE254A45D6005CCF58 /* NavigationBinder.swift */,
 				013CE2E92545F50E0073AAFB /* DisposeViewController.swift */,
 				013CE2F22546BCBD0073AAFB /* ViewControllerBinder.swift */,
 			);
@@ -466,6 +475,8 @@
 				013CE2EA2545F50E0073AAFB /* DisposeViewController.swift in Sources */,
 				013CE2FF2546C05A0073AAFB /* Logging.swift in Sources */,
 				01E25BF9254770D5006816BD /* RawClosure.swift in Sources */,
+				0191F5C2254A46A2005CCF58 /* Transitioning.swift in Sources */,
+				0191F5BF254A45D6005CCF58 /* NavigationBinder.swift in Sources */,
 				013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */,
 				013CE35025475A8D0073AAFB /* Driver.swift in Sources */,
 				01A55D892548BED90048803F /* Storage.swift in Sources */,
@@ -478,6 +489,7 @@
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				013CE35225475A8D0073AAFB /* NSObject+Disposable.swift in Sources */,
 				013CE35325475A8D0073AAFB /* Loading.swift in Sources */,
+				0191F5BB254A181F005CCF58 /* ReposStateBinder.swift in Sources */,
 				01CD00C42540AD2E00767AD9 /* AppDelegate.swift in Sources */,
 				013CE34C25475A8D0073AAFB /* Next.swift in Sources */,
 				0191F5B7254A157E005CCF58 /* ReposActionBinder.swift in Sources */,
