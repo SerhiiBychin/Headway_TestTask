@@ -15,6 +15,7 @@ protocol GitHubAPIAuthProvider {
 
 protocol GitHubAPIReposProvider {
     func fetchRepos() -> Observable<Repos?>
+    func searchRepos(forQuery query: String) -> Observable<Repos?>
 }
 
 protocol GitHubAPIProvider: GitHubAPIAuthProvider, GitHubAPIReposProvider { }
@@ -52,13 +53,29 @@ final class GitHubAPIService: GitHubAPIProvider {
     }
     
     func fetchRepos() -> Observable<Repos?> {
-        return httpClient.get(url: "https://api.github.com/user/repos", token: storage.getToken() ?? "")
+        return httpClient.get(url: "https://api.github.com/user/repos", token: storage.getToken() ?? "", params: nil)
             .map { (data) -> Repos? in
                 guard let data = data,
                       let response = try? JSONDecoder().decode(Repos.self, from: data) else {
                     return nil
                 }
                 return response
+            }
+            .map { (repos) -> Repos? in
+                return repos?.sorted(by: { (repo1, repo2) -> Bool in
+                    return repo1.stargazersCount < repo2.stargazersCount
+                })
+            }
+    }
+    
+    func searchRepos(forQuery query: String) -> Observable<Repos?> {
+        return httpClient.get(url: "https://api.github.com/search/repositories?", token: storage.getToken() ?? "", params: ["q": query])
+            .map { (data) -> Repos? in
+                guard let data = data,
+                      let response = try? JSONDecoder().decode(ReposResult.self, from: data) else {
+                    return nil
+                }
+                return response.items
             }
             .map { (repos) -> Repos? in
                 return repos?.sorted(by: { (repo1, repo2) -> Bool in
