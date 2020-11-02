@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="223" y="48"/>
         </scene>
-        <!--Repos View Controller-->
+        <!--Repositories-->
         <scene sceneID="rlV-1E-fcr">
             <objects>
                 <viewController storyboardIdentifier="ReposViewController" id="j0Z-Gg-EN2" customClass="ReposViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,11 +103,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" text="" placeholder="Search for repositories" translatesAutoresizingMaskIntoConstraints="NO" id="3XF-ay-TbD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LYu-lZ-gm0">
-                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -123,6 +123,9 @@
                             <constraint firstItem="3XF-ay-TbD" firstAttribute="trailing" secondItem="cXo-to-1xa" secondAttribute="trailing" id="nW3-rX-OjE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Repositories" id="NtV-EW-qBx">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="Z1n-Um-7xR"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="3XF-ay-TbD" id="e42-Uk-tAm"/>
                         <outlet property="tableView" destination="LYu-lZ-gm0" id="WIj-3L-v9E"/>
@@ -130,7 +133,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggP-4n-kJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="47"/>
+            <point key="canvasLocation" x="1831.2" y="46.326836581709152"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UNv-s5-TDv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ht8-Fm-NIv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTE-US-5ES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j0Z-Gg-EN2" kind="relationship" relationship="rootViewController" id="UBo-kC-VDJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2K-fU-bbs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="46"/>
         </scene>
     </scenes>
     <resources>
