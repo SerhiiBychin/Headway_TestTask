@@ -127,6 +127,7 @@
                         <barButtonItem key="rightBarButtonItem" title="History" id="Z1n-Um-7xR"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="historyRightBarButton" destination="Z1n-Um-7xR" id="Br4-6o-QIO"/>
                         <outlet property="searchBar" destination="3XF-ay-TbD" id="e42-Uk-tAm"/>
                         <outlet property="tableView" destination="LYu-lZ-gm0" id="WIj-3L-v9E"/>
                     </connections>
@@ -134,6 +135,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggP-4n-kJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1831.2" y="46.326836581709152"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="KyO-Sa-9At">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="2mQ-9H-gsr" customClass="HistoryViewController" customModule="Headway_TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cxp-tI-7kg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-8K-NWb">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WC8-29-Ktk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WC8-29-Ktk" firstAttribute="trailing" secondItem="WYV-8K-NWb" secondAttribute="trailing" id="Phu-c5-HHs"/>
+                            <constraint firstItem="WYV-8K-NWb" firstAttribute="top" secondItem="WC8-29-Ktk" secondAttribute="top" id="WBY-dq-sbV"/>
+                            <constraint firstItem="WC8-29-Ktk" firstAttribute="bottom" secondItem="WYV-8K-NWb" secondAttribute="bottom" id="j6Z-fB-xza"/>
+                            <constraint firstItem="WYV-8K-NWb" firstAttribute="leading" secondItem="WC8-29-Ktk" secondAttribute="leading" id="mCr-ET-0J9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="cd5-5A-fCt">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="oPu-CL-dVV"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneRightBarButton" destination="oPu-CL-dVV" id="Rh7-Kc-03w"/>
+                        <outlet property="tableView" destination="WYV-8K-NWb" id="8Ha-zm-0de"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2J-Y4-Gfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3463" y="45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UNv-s5-TDv">
@@ -152,6 +187,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2K-fU-bbs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068" y="46"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ukr-HR-Lx5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktj-AC-Ox7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CHn-Iu-aPv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2mQ-9H-gsr" kind="relationship" relationship="rootViewController" id="092-mb-3h8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxH-dX-ptl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="45"/>
         </scene>
     </scenes>
     <resources>

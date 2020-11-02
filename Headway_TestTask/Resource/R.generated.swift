@@ -259,9 +259,14 @@ struct _R: Rswift.Validatable {
       typealias InitialController = LoginViewController
 
       let bundle = R.hostingBundle
+      let historyViewController = StoryboardViewControllerResource<HistoryViewController>(identifier: "HistoryViewController")
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
       let reposViewController = StoryboardViewControllerResource<ReposViewController>(identifier: "ReposViewController")
+
+      func historyViewController(_: Void = ()) -> HistoryViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: historyViewController)
+      }
 
       func loginViewController(_: Void = ()) -> LoginViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
@@ -275,6 +280,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "github-logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'github-logo' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().historyViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'historyViewController' could not be loaded from storyboard 'Main' as 'HistoryViewController'.") }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
         if _R.storyboard.main().reposViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'reposViewController' could not be loaded from storyboard 'Main' as 'ReposViewController'.") }
       }

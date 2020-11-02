@@ -28,6 +28,7 @@ final class ReposViewController: DisposeViewController {
     
     @IBOutlet private (set) var tableView: UITableView!
     @IBOutlet private (set) var searchBar: UISearchBar!
+    @IBOutlet private (set) var historyRightBarButton: UIBarButtonItem!
 }
 
 
