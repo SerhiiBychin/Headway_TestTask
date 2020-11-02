@@ -9,10 +9,10 @@ import Foundation
 
 final class HistoryActionBinder: ViewControllerBinder {
     unowned let viewController: HistoryViewController
-    private let driver: HistoryDriver
+    private let driver: HistoryDriving
     
     init(viewController: HistoryViewController,
-         driver: HistoryDriver) {
+         driver: HistoryDriving) {
         self.viewController = viewController
         self.driver = driver
         bind()
