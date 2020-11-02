@@ -36,6 +36,7 @@
 		013CE358254768F40073AAFB /* LoginStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE357254768F40073AAFB /* LoginStateBinder.swift */; };
 		013CE35B25476F9F0073AAFB /* LoginActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */; };
 		017866062550953A00CEE57D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017866052550953A00CEE57D /* HistoryViewController.swift */; };
+		0178660925509F2100CEE57D /* HistoryDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660825509F2100CEE57D /* HistoryDriver.swift */; };
 		0191F597254A0677005CCF58 /* RepoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F596254A0677005CCF58 /* RepoItemViewModel.swift */; };
 		0191F5A6254A0B29005CCF58 /* ReposDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5A5254A0B29005CCF58 /* ReposDriver.swift */; };
 		0191F5B7254A157E005CCF58 /* ReposActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */; };
@@ -89,6 +90,7 @@
 		013CE357254768F40073AAFB /* LoginStateBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginStateBinder.swift; sourceTree = "<group>"; };
 		013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginActionBinder.swift; sourceTree = "<group>"; };
 		017866052550953A00CEE57D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		0178660825509F2100CEE57D /* HistoryDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDriver.swift; sourceTree = "<group>"; };
 		0191F596254A0677005CCF58 /* RepoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemViewModel.swift; sourceTree = "<group>"; };
 		0191F5A5254A0B29005CCF58 /* ReposDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDriver.swift; sourceTree = "<group>"; };
 		0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposActionBinder.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				017866052550953A00CEE57D /* HistoryViewController.swift */,
+				0178660825509F2100CEE57D /* HistoryDriver.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				0191F5C2254A46A2005CCF58 /* Transitioning.swift in Sources */,
 				0191F5BF254A45D6005CCF58 /* NavigationBinder.swift in Sources */,
 				013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */,
+				0178660925509F2100CEE57D /* HistoryDriver.swift in Sources */,
 				013CE35025475A8D0073AAFB /* Driver.swift in Sources */,
 				01A55D892548BED90048803F /* Storage.swift in Sources */,
 				013CE34E25475A8D0073AAFB /* Callable.swift in Sources */,

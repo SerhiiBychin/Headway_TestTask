@@ -16,8 +16,10 @@ final class HistoryViewController: DisposeViewController {
 
 extension HistoryViewController: StaticFactory {
     enum Factory {
-        static func `default`(watched repos: [RepoItemViewModel]) -> HistoryViewController {
+        static func `default`(repos: [RepoItemViewModel]) -> HistoryViewController {
             let historyVC = R.storyboard.main.historyViewController()!
+            let driver = HistoryDriver.Factory.default(repos: repos)
+            
             return historyVC
         }
     }
