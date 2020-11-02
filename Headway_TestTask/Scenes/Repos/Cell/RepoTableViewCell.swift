@@ -28,9 +28,10 @@ class RepoTableViewCell: UITableViewCell {
 }
 
 extension RepoTableViewCell {
-    func configure(withRepoItem item: RepoItemViewModel) {
+    func configure(withRepoItem item: RepoItemViewModel, selectedItems: [RepoItemViewModel]) {
         configure(withImageUrl: item.imageUrl,
                   name: item.name)
+        self.backgroundColor = selectedItems.contains(where: { $0.id == item.id}) ? .lightGray : .clear
     }
 }
 

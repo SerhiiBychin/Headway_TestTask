@@ -43,12 +43,10 @@ final class ReposStateBinder: ViewControllerBinder {
         case let .results(repos):
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             viewController.setDataSource(repos)
-            viewController.tableView.reloadData()
             
         case let .searchResults(repos):
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             viewController.setDataSource(repos)
-            viewController.tableView.reloadData()
         }
     }
     

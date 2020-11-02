@@ -11,9 +11,19 @@ import SafariServices
 
 final class ReposViewController: DisposeViewController {
     private var dataSource: [RepoItemViewModel]?
+    private var selectedDataSource = [RepoItemViewModel]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     private let selectedIndexSubject = PublishSubject<RepoItemViewModel>()
+    private let selectedIndexesSubject = PublishSubject<[RepoItemViewModel]>()
     var selectedIndex: Observable<RepoItemViewModel> {
         return selectedIndexSubject.asObservable()
+    }
+    
+    var selectedIndexes: Observable<[RepoItemViewModel]> {
+        return selectedIndexesSubject.asObservable()
     }
     
     @IBOutlet private (set) var tableView: UITableView!
@@ -52,6 +62,7 @@ extension ReposViewController: StaticFactory {
 extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
     func setDataSource(_ dataSource: [RepoItemViewModel]) {
         self.dataSource = dataSource
+        tableView.reloadData()
     }
     
     func setDelegates() {
@@ -67,15 +78,22 @@ extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = dataSource else { return UITableViewCell() } // No-op
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repoTableViewCell,
                                                  for: indexPath)!
-        cell.configure(withRepoItem: data[indexPath.row])
+        cell.configure(withRepoItem: data[indexPath.row], selectedItems: selectedDataSource)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = dataSource else { return }
+        let selectedRepo = data[indexPath.row]
+        
+        if !selectedDataSource.contains(where: { $0.id == selectedRepo.id }) { selectedDataSource.append(selectedRepo) }
+            
         selectedIndexSubject.onNext(data[indexPath.row])
+        selectedIndexesSubject.onNext(selectedDataSource )
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
