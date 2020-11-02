@@ -37,6 +37,7 @@
 		013CE35B25476F9F0073AAFB /* LoginActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */; };
 		017866062550953A00CEE57D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017866052550953A00CEE57D /* HistoryViewController.swift */; };
 		0178660925509F2100CEE57D /* HistoryDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660825509F2100CEE57D /* HistoryDriver.swift */; };
+		0178660C2550AFD600CEE57D /* HistoryActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */; };
 		0191F597254A0677005CCF58 /* RepoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F596254A0677005CCF58 /* RepoItemViewModel.swift */; };
 		0191F5A6254A0B29005CCF58 /* ReposDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5A5254A0B29005CCF58 /* ReposDriver.swift */; };
 		0191F5B7254A157E005CCF58 /* ReposActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */; };
@@ -91,6 +92,7 @@
 		013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginActionBinder.swift; sourceTree = "<group>"; };
 		017866052550953A00CEE57D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		0178660825509F2100CEE57D /* HistoryDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDriver.swift; sourceTree = "<group>"; };
+		0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryActionBinder.swift; sourceTree = "<group>"; };
 		0191F596254A0677005CCF58 /* RepoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemViewModel.swift; sourceTree = "<group>"; };
 		0191F5A5254A0B29005CCF58 /* ReposDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDriver.swift; sourceTree = "<group>"; };
 		0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposActionBinder.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				017866052550953A00CEE57D /* HistoryViewController.swift */,
 				0178660825509F2100CEE57D /* HistoryDriver.swift */,
+				0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				01E25BF7254770D5006816BD /* Closure.swift in Sources */,
 				013CE3012546C05A0073AAFB /* Params.swift in Sources */,
 				013CE2F32546BCBD0073AAFB /* ViewControllerBinder.swift in Sources */,
+				0178660C2550AFD600CEE57D /* HistoryActionBinder.swift in Sources */,
 				013CE334254757E00073AAFB /* LoginDriver.swift in Sources */,
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				013CE35225475A8D0073AAFB /* NSObject+Disposable.swift in Sources */,
