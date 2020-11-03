@@ -11,7 +11,7 @@ import SafariServices
 
 final class ReposViewController: DisposeViewController {
     private var dataSource: [RepoItemViewModel]?
-    private var selectedDataSource = [RepoItemViewModel]() {
+    private var selectedRepos = [RepoItemViewModel]() {
         didSet {
             tableView.reloadData()
         }
@@ -82,7 +82,7 @@ extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repoTableViewCell,
                                                  for: indexPath)!
-        cell.configure(withRepoItem: data[indexPath.row], selectedItems: selectedDataSource)
+        cell.configure(withRepoItem: data[indexPath.row], selectedItems: selectedRepos)
         
         return cell
     }
@@ -91,10 +91,10 @@ extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
         guard let data = dataSource else { return }
         let selectedRepo = data[indexPath.row]
         
-        if !selectedDataSource.contains(where: { $0.id == selectedRepo.id }) { selectedDataSource.append(selectedRepo) }
+        if !selectedRepos.contains(where: { $0.id == selectedRepo.id }) { selectedRepos.append(selectedRepo) }
             
         selectedIndexSubject.onNext(data[indexPath.row])
-        selectedIndexesSubject.onNext(selectedDataSource )
+        selectedIndexesSubject.onNext(selectedRepos)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
