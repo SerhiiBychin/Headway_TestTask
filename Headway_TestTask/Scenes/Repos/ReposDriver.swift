@@ -31,8 +31,10 @@ protocol ReposDriving {
 final class ReposDriver: ReposDriving {
     private var repoBag = DisposeBag()
     private let activityIndicator = ActivityIndicator()
+    
     private let stateRelay = BehaviorRelay<ReposState>(value: .none)
     private let didSelectRelay = BehaviorRelay<RepoItemViewModel?>(value: nil)
+    
     private var results: Repos? {
         didSet {
             if let repoItems = results?.compactMap({ RepoItemViewModel(repo: $0) }) {

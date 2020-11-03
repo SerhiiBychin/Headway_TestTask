@@ -21,9 +21,17 @@ final class HistoryActionBinder: ViewControllerBinder {
     func dispose() { }
     
     func bindLoaded() {
+        let select = viewController
+            .selectedIndex
+            .asDriver(onError: RepoItemViewModel(id: 0, repoURL: "", name: "", imageUrl: ""))
+
         viewController.bag.insert(
             viewController.doneRightBarButton.rx.tap
-                .bind(onNext: driver.close)
+                .bind(onNext: driver.close),
+            
+            select
+                .drive(onNext: driver.select)
+            
         )
     }
 }

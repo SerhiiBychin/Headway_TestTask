@@ -8,15 +8,16 @@
 import Foundation
 import UIKit
 import RxSwift
+import SafariServices
 
 final class HistoryViewController: DisposeViewController {
     private var dataSource: [RepoItemViewModel]?
     
     private let selectedIndexSubject = PublishSubject<RepoItemViewModel>()
+    
     var selectedIndex: Observable<RepoItemViewModel> {
         return selectedIndexSubject.asObservable()
     }
-    
     
     @IBOutlet private (set) var tableView: UITableView!
     @IBOutlet private (set) var doneRightBarButton: UIBarButtonItem!
@@ -32,15 +33,25 @@ extension HistoryViewController: StaticFactory {
             let stateBinder = HistoryStateBinder(viewController: historyVC, driver: driver)
             let navigationBinder = DismissBinder<HistoryViewController>.Factory
                 .dismiss(viewController: historyVC, driver: driver.didClose)
+            let navigationBinder2 = NavigationPushBinder<RepoItemViewModel, HistoryViewController>.Factory
+                .present(viewController: historyVC,
+                      driver: driver.didSelect,
+                      factory: repoDetailsSafariVC)
             
             historyVC.bag.insert(
                 stateBinder,
                 actionBinder,
-                navigationBinder
+                navigationBinder,
+                navigationBinder2
             )
             
             return historyVC
         }
+        
+        private static func repoDetailsSafariVC(_ item: RepoItemViewModel) -> UIViewController {
+            return SFSafariViewController(url: URL(string: item.repoURL)!)
+        }
+
     }
 }
 
@@ -63,7 +74,6 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = dataSource else { return UITableViewCell() } // No-op
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repoTableViewCell,
                                                  for: indexPath)!
