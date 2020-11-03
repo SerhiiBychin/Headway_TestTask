@@ -40,7 +40,10 @@ final class ReposActionBinder: ViewControllerBinder {
                 .drive(onNext: driver.save),
             
             query
-                .bind(onNext: driver.search)
+                .bind(onNext: driver.search),
+            
+            viewController.historyRightBarButton.rx.tap
+                .bind(onNext: driver.showWatchedRepos)
         )
     }
 }

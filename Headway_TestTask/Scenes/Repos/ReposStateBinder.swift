@@ -47,6 +47,11 @@ final class ReposStateBinder: ViewControllerBinder {
         case let .searchResults(repos):
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             viewController.setDataSource(repos)
+            
+        case let .showWatchedRepos(repos):
+            let navigationHistoryVC = UINavigationController(rootViewController: HistoryViewController.Factory.default(repos: repos))
+            navigationHistoryVC.modalPresentationStyle = .formSheet
+            viewController.present(navigationHistoryVC, animated: true, completion: nil)
         }
     }
     

@@ -14,6 +14,7 @@ enum ReposState {
     case loading
     case results([RepoItemViewModel])
     case searchResults([RepoItemViewModel])
+    case showWatchedRepos([RepoItemViewModel])
 }
 
 protocol ReposDriving {
@@ -24,6 +25,7 @@ protocol ReposDriving {
     func select(_ model: RepoItemViewModel)
     func search(_ query: String)
     func save(repos: [RepoItemViewModel])
+    func showWatchedRepos()
 }
 
 final class ReposDriver: ReposDriving {
@@ -91,6 +93,11 @@ final class ReposDriver: ReposDriving {
     
     func save(repos: [RepoItemViewModel]) {
         try? storage.saveObject(repos, forKey: "WatchedRepos")
+    }
+    
+    func showWatchedRepos() {
+        guard let repos = try? storage.getObject(forKey: "WatchedRepos", castTo: [RepoItemViewModel].self) else { return }
+        stateRelay.accept(.showWatchedRepos(repos))
     }
     
     private func bind() {

@@ -20,17 +20,11 @@ final class HistoryDriver: HistoryDriving {
     private let closeRelay = PublishRelay<Void>()
     private let dataRelay = BehaviorRelay<[RepoItemViewModel]?>(value: nil)
     
-    private var repos: [RepoItemViewModel] {
-        didSet {
-            dataRelay.accept(repos)
-        }
-    }
-    
     var data: Driver<[RepoItemViewModel]> { dataRelay.unwrap().asDriver() }
     var didClose: Driver<Void> { closeRelay.asDriver() }
     
     init(repos: [RepoItemViewModel]) {
-        self.repos = repos
+        dataRelay.accept(repos)
     }
     
     func close() {

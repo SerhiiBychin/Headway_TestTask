@@ -32,6 +32,6 @@ final class HistoryStateBinder: ViewControllerBinder {
     }
     
     private func configure(_ repos: [RepoItemViewModel]) {
-
+        viewController.setDataSource(repos)
     }
 }
