@@ -30,9 +30,9 @@ final class LoginStateBinder: ViewControllerBinder {
         switch state {
         case .success:
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            let reposVC = ReposViewController.Factory.default
-            reposVC.modalPresentationStyle = .fullScreen
-            viewController.present(reposVC, animated: true, completion: nil)
+            let navigationReposVC = UINavigationController(rootViewController: ReposViewController.Factory.default)
+            navigationReposVC.modalPresentationStyle = .fullScreen
+            viewController.present(navigationReposVC, animated: true, completion: nil)
             
         case .failure(let error):
             UIApplication.shared.isNetworkActivityIndicatorVisible = false

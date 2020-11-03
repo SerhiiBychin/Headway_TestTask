@@ -26,14 +26,24 @@ final class ReposActionBinder: ViewControllerBinder {
             .selectedIndex
             .asDriver(onError: RepoItemViewModel(id: 0, repoURL: "", name: "", imageUrl: ""))
         
+        let watchedRepos = viewController
+            .selectedIndexes
+            .asDriver(onError: [RepoItemViewModel(id: 0, repoURL: "", name: "", imageUrl: "")])
+        
         let query = viewController.searchBar.rx.text.orEmpty
         
         viewController.bag.insert(
             select
                 .drive(onNext: driver.select),
             
+            watchedRepos
+                .drive(onNext: driver.save),
+            
             query
-                .bind(onNext: driver.search)
+                .bind(onNext: driver.search),
+            
+            viewController.historyRightBarButton.rx.tap
+                .bind(onNext: driver.showWatchedRepos)
         )
     }
 }

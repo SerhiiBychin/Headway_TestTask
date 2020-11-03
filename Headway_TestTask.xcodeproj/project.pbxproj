@@ -35,6 +35,10 @@
 		013CE35525475A8D0073AAFB /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE34B25475A8D0073AAFB /* Just.swift */; };
 		013CE358254768F40073AAFB /* LoginStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE357254768F40073AAFB /* LoginStateBinder.swift */; };
 		013CE35B25476F9F0073AAFB /* LoginActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */; };
+		017866062550953A00CEE57D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017866052550953A00CEE57D /* HistoryViewController.swift */; };
+		0178660925509F2100CEE57D /* HistoryDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660825509F2100CEE57D /* HistoryDriver.swift */; };
+		0178660C2550AFD600CEE57D /* HistoryActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */; };
+		0178660F2550B17E00CEE57D /* HistoryStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178660E2550B17E00CEE57D /* HistoryStateBinder.swift */; };
 		0191F597254A0677005CCF58 /* RepoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F596254A0677005CCF58 /* RepoItemViewModel.swift */; };
 		0191F5A6254A0B29005CCF58 /* ReposDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5A5254A0B29005CCF58 /* ReposDriver.swift */; };
 		0191F5B7254A157E005CCF58 /* ReposActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */; };
@@ -87,6 +91,10 @@
 		013CE34B25475A8D0073AAFB /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		013CE357254768F40073AAFB /* LoginStateBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginStateBinder.swift; sourceTree = "<group>"; };
 		013CE35A25476F9F0073AAFB /* LoginActionBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginActionBinder.swift; sourceTree = "<group>"; };
+		017866052550953A00CEE57D /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		0178660825509F2100CEE57D /* HistoryDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDriver.swift; sourceTree = "<group>"; };
+		0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryActionBinder.swift; sourceTree = "<group>"; };
+		0178660E2550B17E00CEE57D /* HistoryStateBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateBinder.swift; sourceTree = "<group>"; };
 		0191F596254A0677005CCF58 /* RepoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemViewModel.swift; sourceTree = "<group>"; };
 		0191F5A5254A0B29005CCF58 /* ReposDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposDriver.swift; sourceTree = "<group>"; };
 		0191F5B6254A157E005CCF58 /* ReposActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposActionBinder.swift; sourceTree = "<group>"; };
@@ -145,8 +153,9 @@
 		013CE2BE2541FD370073AAFB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				013CE2C22541FD4B0073AAFB /* Repos */,
 				013CE2BF2541FD3F0073AAFB /* Login */,
+				013CE2C22541FD4B0073AAFB /* Repos */,
+				01786603255094AA00CEE57D /* History */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -255,6 +264,17 @@
 				013CE34B25475A8D0073AAFB /* Just.swift */,
 			);
 			path = RxUtils;
+			sourceTree = "<group>";
+		};
+		01786603255094AA00CEE57D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				017866052550953A00CEE57D /* HistoryViewController.swift */,
+				0178660825509F2100CEE57D /* HistoryDriver.swift */,
+				0178660B2550AFD600CEE57D /* HistoryActionBinder.swift */,
+				0178660E2550B17E00CEE57D /* HistoryStateBinder.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		01A55D8B2548C4230048803F /* Model */ = {
@@ -478,6 +498,7 @@
 				0191F5C2254A46A2005CCF58 /* Transitioning.swift in Sources */,
 				0191F5BF254A45D6005CCF58 /* NavigationBinder.swift in Sources */,
 				013CE2EF2545F6CA0073AAFB /* DefaultInitializable.swift in Sources */,
+				0178660925509F2100CEE57D /* HistoryDriver.swift in Sources */,
 				013CE35025475A8D0073AAFB /* Driver.swift in Sources */,
 				01A55D892548BED90048803F /* Storage.swift in Sources */,
 				013CE34E25475A8D0073AAFB /* Callable.swift in Sources */,
@@ -485,6 +506,7 @@
 				01E25BF7254770D5006816BD /* Closure.swift in Sources */,
 				013CE3012546C05A0073AAFB /* Params.swift in Sources */,
 				013CE2F32546BCBD0073AAFB /* ViewControllerBinder.swift in Sources */,
+				0178660C2550AFD600CEE57D /* HistoryActionBinder.swift in Sources */,
 				013CE334254757E00073AAFB /* LoginDriver.swift in Sources */,
 				01CD00C82540AD2E00767AD9 /* LoginViewController.swift in Sources */,
 				013CE35225475A8D0073AAFB /* NSObject+Disposable.swift in Sources */,
@@ -505,12 +527,14 @@
 				01E25BF8254770D5006816BD /* Set.swift in Sources */,
 				013CE3002546C05A0073AAFB /* Log.swift in Sources */,
 				013CE34F25475A8D0073AAFB /* Util.swift in Sources */,
+				017866062550953A00CEE57D /* HistoryViewController.swift in Sources */,
 				01A55DA1254A02840048803F /* RepoTableViewCell.swift in Sources */,
 				013CE34D25475A8D0073AAFB /* Publicsher.swift in Sources */,
 				013CE358254768F40073AAFB /* LoginStateBinder.swift in Sources */,
 				013CE2B82541F70A0073AAFB /* ReposViewController.swift in Sources */,
 				013CE35125475A8D0073AAFB /* Latest.swift in Sources */,
 				01CD00C62540AD2E00767AD9 /* SceneDelegate.swift in Sources */,
+				0178660F2550B17E00CEE57D /* HistoryStateBinder.swift in Sources */,
 				013CE2F82546BE9E0073AAFB /* Unown.swift in Sources */,
 				013CE2A9254161F10073AAFB /* R.generated.swift in Sources */,
 				013CE3022546C05A0073AAFB /* Level.swift in Sources */,

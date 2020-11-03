@@ -14,6 +14,7 @@ enum ReposState {
     case loading
     case results([RepoItemViewModel])
     case searchResults([RepoItemViewModel])
+    case showWatchedRepos([RepoItemViewModel])
 }
 
 protocol ReposDriving {
@@ -23,13 +24,17 @@ protocol ReposDriving {
     
     func select(_ model: RepoItemViewModel)
     func search(_ query: String)
+    func save(repos: [RepoItemViewModel])
+    func showWatchedRepos()
 }
 
 final class ReposDriver: ReposDriving {
     private var repoBag = DisposeBag()
     private let activityIndicator = ActivityIndicator()
+    
     private let stateRelay = BehaviorRelay<ReposState>(value: .none)
     private let didSelectRelay = BehaviorRelay<RepoItemViewModel?>(value: nil)
+    
     private var results: Repos? {
         didSet {
             if let repoItems = results?.compactMap({ RepoItemViewModel(repo: $0) }) {
@@ -50,9 +55,11 @@ final class ReposDriver: ReposDriving {
     var didSelect: Driver<RepoItemViewModel> { didSelectRelay.unwrap().asDriver() }
     
     private let api: GitHubAPIProvider
+    private let storage: StorageSavable
     
-    init(api: GitHubAPIProvider) {
+    init(api: GitHubAPIProvider, storage: StorageSavable = Storage()) {
         self.api = api
+        self.storage = storage
         bind()
     }
     
@@ -83,6 +90,16 @@ final class ReposDriver: ReposDriving {
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .bind(onNext: set(unowned: self, to: \.searchResults))
             .disposed(by: repoBag)
+    }
+    
+    
+    func save(repos: [RepoItemViewModel]) {
+        try? storage.saveObject(repos, forKey: "WatchedRepos")
+    }
+    
+    func showWatchedRepos() {
+        guard let repos = try? storage.getObject(forKey: "WatchedRepos", castTo: [RepoItemViewModel].self) else { return }
+        stateRelay.accept(.showWatchedRepos(repos))
     }
     
     private func bind() {

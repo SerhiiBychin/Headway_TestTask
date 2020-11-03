@@ -1,67 +1,62 @@
 //
-//  ReposViewController.swift
+//  HistoryViewController.swift
 //  Headway_TestTask
 //
-//  Created by Serhii Bychin on 22.10.2020.
+//  Created by Serhii Bychin on 02.11.2020.
 //
 
+import Foundation
 import UIKit
 import RxSwift
 import SafariServices
 
-final class ReposViewController: DisposeViewController {
+final class HistoryViewController: DisposeViewController {
     private var dataSource: [RepoItemViewModel]?
-    private var selectedRepos = [RepoItemViewModel]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    
     private let selectedIndexSubject = PublishSubject<RepoItemViewModel>()
-    private let selectedIndexesSubject = PublishSubject<[RepoItemViewModel]>()
     
     var selectedIndex: Observable<RepoItemViewModel> {
         return selectedIndexSubject.asObservable()
     }
     
-    var selectedIndexes: Observable<[RepoItemViewModel]> {
-        return selectedIndexesSubject.asObservable()
-    }
-    
     @IBOutlet private (set) var tableView: UITableView!
-    @IBOutlet private (set) var searchBar: UISearchBar!
-    @IBOutlet private (set) var historyRightBarButton: UIBarButtonItem!
+    @IBOutlet private (set) var doneRightBarButton: UIBarButtonItem!
 }
 
 
-extension ReposViewController: StaticFactory {
+extension HistoryViewController: StaticFactory {
     enum Factory {
-        static var `default`: ReposViewController {
-            let reposVC = R.storyboard.main.reposViewController()!
-            let driver = ReposDriver.Factory.default
-            let actionBinder = ReposActionBinder(viewController: reposVC, driver: driver)
-            let stateBinder = ReposStateBinder.Factory.default(reposVC, driver: driver)
-            let navigationBinder = NavigationPushBinder<RepoItemViewModel, ReposViewController>.Factory
-                .present(viewController: reposVC,
+        static func `default`(repos: [RepoItemViewModel]) -> HistoryViewController {
+            let historyVC = R.storyboard.main.historyViewController()!
+            let driver = HistoryDriver.Factory.default(repos: repos)
+            let actionBinder = HistoryActionBinder(viewController: historyVC, driver: driver)
+            let stateBinder = HistoryStateBinder(viewController: historyVC, driver: driver)
+            let navigationBinder = DismissBinder<HistoryViewController>.Factory
+                .dismiss(viewController: historyVC, driver: driver.didClose)
+            let navigationBinder2 = NavigationPushBinder<RepoItemViewModel, HistoryViewController>.Factory
+                .present(viewController: historyVC,
                       driver: driver.didSelect,
                       factory: repoDetailsSafariVC)
             
-            
-            reposVC.bag.insert(
+            historyVC.bag.insert(
                 stateBinder,
                 actionBinder,
-                navigationBinder
+                navigationBinder,
+                navigationBinder2
             )
             
-            return reposVC
+            return historyVC
         }
         
         private static func repoDetailsSafariVC(_ item: RepoItemViewModel) -> UIViewController {
             return SFSafariViewController(url: URL(string: item.repoURL)!)
         }
+
     }
 }
 
-extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
+
+extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     func setDataSource(_ dataSource: [RepoItemViewModel]) {
         self.dataSource = dataSource
         tableView.reloadData()
@@ -80,22 +75,17 @@ extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = dataSource else { return UITableViewCell() } // No-op
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.repoTableViewCell,
                                                  for: indexPath)!
-        cell.configure(withRepoItem: data[indexPath.row], selectedItems: selectedRepos)
+        cell.configure(withRepoItem: data[indexPath.row], selectedItems: [])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = dataSource else { return }
-        let selectedRepo = data[indexPath.row]
         
-        if !selectedRepos.contains(where: { $0.id == selectedRepo.id }) { selectedRepos.append(selectedRepo) }
-            
         selectedIndexSubject.onNext(data[indexPath.row])
-        selectedIndexesSubject.onNext(selectedRepos)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
