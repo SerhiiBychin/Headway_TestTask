@@ -18,6 +18,7 @@ final class ReposViewController: DisposeViewController {
     }
     private let selectedIndexSubject = PublishSubject<RepoItemViewModel>()
     private let selectedIndexesSubject = PublishSubject<[RepoItemViewModel]>()
+    
     var selectedIndex: Observable<RepoItemViewModel> {
         return selectedIndexSubject.asObservable()
     }
@@ -95,6 +96,7 @@ extension ReposViewController: UITableViewDataSource, UITableViewDelegate {
             
         selectedIndexSubject.onNext(data[indexPath.row])
         selectedIndexesSubject.onNext(selectedRepos)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

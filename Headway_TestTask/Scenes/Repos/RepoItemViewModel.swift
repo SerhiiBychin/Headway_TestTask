@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepoItemViewModel {
+struct RepoItemViewModel: Codable {
     let id: Int
     let repoURL: String
     let name: String

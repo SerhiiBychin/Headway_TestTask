@@ -23,6 +23,7 @@ protocol ReposDriving {
     
     func select(_ model: RepoItemViewModel)
     func search(_ query: String)
+    func save(repos: [RepoItemViewModel])
 }
 
 final class ReposDriver: ReposDriving {
@@ -50,9 +51,11 @@ final class ReposDriver: ReposDriving {
     var didSelect: Driver<RepoItemViewModel> { didSelectRelay.unwrap().asDriver() }
     
     private let api: GitHubAPIProvider
+    private let storage: StorageSavable
     
-    init(api: GitHubAPIProvider) {
+    init(api: GitHubAPIProvider, storage: StorageSavable = Storage()) {
         self.api = api
+        self.storage = storage
         bind()
     }
     
@@ -83,6 +86,11 @@ final class ReposDriver: ReposDriving {
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .bind(onNext: set(unowned: self, to: \.searchResults))
             .disposed(by: repoBag)
+    }
+    
+    
+    func save(repos: [RepoItemViewModel]) {
+        try? storage.saveObject(repos, forKey: "WatchedRepos")
     }
     
     private func bind() {
